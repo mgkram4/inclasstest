@@ -2,14 +2,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-
-// You'll need to install these packages:
-// npm install framer-motion @heroicons/react lucide-react
+import Image from 'next/image';
 
 export default function Home() {
-  const [selectedWork, setSelectedWork] = useState(null);
-
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -92,11 +87,12 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <div className="rounded-2xl overflow-hidden">
-              <img
+            <div className="relative h-[600px] rounded-2xl overflow-hidden">
+              <Image
                 src="/api/placeholder/600/800"
                 alt="Artist portrait"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
             <div>
@@ -107,7 +103,7 @@ export default function Home() {
                 artistic principles with modern digital techniques.
               </p>
               <p className="text-blue-700 mb-6">
-                My work has been featured in various digital galleries and I've 
+                My work has been featured in various digital galleries and I&apos;ve 
                 collaborated with leading brands in the tech and entertainment industry.
               </p>
             </div>
@@ -137,14 +133,15 @@ export default function Home() {
             {artworks.map((artwork, index) => (
               <motion.div 
                 key={index}
-                className="group relative rounded-xl overflow-hidden cursor-pointer"
+                className="group relative h-80 rounded-xl overflow-hidden cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <img
+                <Image
                   src={artwork.image}
                   alt={artwork.title}
-                  className="w-full h-80 object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6">
                   <h4 className="text-xl font-bold mb-2">{artwork.title}</h4>
@@ -167,11 +164,11 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h3 className="text-3xl font-bold mb-6">Let's Create Together</h3>
+            <h3 className="text-3xl font-bold mb-6">Let&apos;s Create Together</h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              I'm always open to discussing new projects and creative ideas.
+              I&apos;m always open to discussing new projects and creative ideas.
               Whether you have a specific project in mind or just want to explore possibilities,
-              let's start a conversation.
+              let&apos;s start a conversation.
             </p>
             <motion.button 
               className="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors"
