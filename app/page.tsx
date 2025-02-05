@@ -21,9 +21,18 @@ const tools = [
 ];
 
 const students = [
-  { name: "Alex Smith", website: "https://alex-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Jamie Lee", website: "https://jamie-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Chris Wong", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" }
+  { name: "Evelyn Yan", website: "https://alex-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Iris Ju", website: "https://jamie-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Bob Zhang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Tim Zhou", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Kenneth Shi", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Sky Liu", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "James Yang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Oliver Zhang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Winnie Deng", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Amy Liu", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Phoebe Huang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Ann Wen", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
 ];
 
 export default function Home() {
