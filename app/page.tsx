@@ -3,188 +3,174 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { AiFillHtml5 } from 'react-icons/ai';
+import { BiBot } from 'react-icons/bi';
+import { BsCodeSlash, BsRobot } from 'react-icons/bs';
+import { IoLogoCss3 } from 'react-icons/io';
+import { SiGithub, SiOpenai } from 'react-icons/si';
+
+const tools = [
+  { name: "ChatGPT", icon: SiOpenai },
+  { name: "Midjourney", icon: BiBot },
+  { name: "Claude", icon: BiBot },
+  { name: "VS Code", icon: BsCodeSlash },
+  { name: "GitHub Copilot", icon: BsRobot },
+  { name: "HTML", icon: AiFillHtml5 },
+  { name: "CSS", icon: IoLogoCss3 },
+  { name: "GitHub", icon: SiGithub }
+];
+
+const students = [
+  { name: "Alex Smith", website: "https://alex-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Jamie Lee", website: "https://jamie-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Chris Wong", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" }
+];
 
 export default function Home() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const artworks = [
-    {
-      title: "Blue Dreams",
-      description: "Digital art exploration of underwater themes",
-      image: "/api/placeholder/800/600",
-      category: "Digital Art"
-    },
-    {
-      title: "Neon Nights",
-      description: "Urban landscape with cyberpunk elements",
-      image: "/api/placeholder/800/600",
-      category: "Illustration"
-    },
-    {
-      title: "Natural Flow",
-      description: "Abstract representation of natural patterns",
-      image: "/api/placeholder/800/600",
-      category: "Abstract"
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <motion.h1 
-              className="text-2xl font-bold text-blue-900"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              Artist Name
-            </motion.h1>
-            <motion.div 
-              className="flex gap-6 text-blue-800"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <a href="#about" className="hover:text-blue-600 transition-colors">About</a>
-              <a href="#work" className="hover:text-blue-600 transition-colors">Work</a>
-              <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
-            </motion.div>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center"
+      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="neural-network-animation"></div>
+        </div>
+        <motion.div 
+          className="absolute inset-0 opacity-10"
+          animate={{ 
+            backgroundPosition: ["0% 0%", "100% 100%"],
+            backgroundSize: ["100% 100%", "120% 120%"]
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity,
+            repeatType: "reverse" 
+          }}
+          style={{
+            backgroundImage: "url('/api/placeholder/1000/1000')",
+            backgroundSize: "cover"
+          }}
+        />
+        <div className="max-w-4xl text-center z-10">
+          <motion.div
+            className="mb-8 text-[#1a4b84]"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BsRobot size={80} className="mx-auto" />
+          </motion.div>
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold text-[#1a4b84] mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl font-bold text-blue-900 mb-6">Digital Artist & Illustrator</h2>
-            <p className="text-xl text-blue-700 max-w-2xl mx-auto">
-              Creating unique digital experiences through art and design
-            </p>
+            AI Bootcamp 2025
+            <span className="block text-2xl md:text-3xl text-[#c4a052] mt-4">
+              Winter 1-Week Intensive
+            </span>
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl text-[#1a4b84] mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            Learn to build modern applications with AI tools - no coding experience required
+          </motion.p>
+          <motion.div 
+            className="mt-12 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <a href="https://oakcrestacademy.org/" className="px-12 py-4 bg-[#1a4b84] text-white rounded hover:bg-[#15396a] transition-colors flex items-center gap-2 text-lg font-semibold">
+              Apply Now
+            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <div className="relative h-[600px] rounded-2xl overflow-hidden">
-              <Image
-                src="/api/placeholder/600/800"
-                alt="Artist portrait"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-blue-900 mb-6">About Me</h3>
-              <p className="text-blue-700 mb-6">
-                With over a decade of experience in digital art and illustration, 
-                I specialize in creating unique visual experiences that blend traditional 
-                artistic principles with modern digital techniques.
-              </p>
-              <p className="text-blue-700 mb-6">
-                My work has been featured in various digital galleries and I&apos;ve 
-                collaborated with leading brands in the tech and entertainment industry.
-              </p>
-            </div>
-          </motion.div>
+      {/* Tools Section */}
+      <section className="py-20 px-4 bg-white relative">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="binary-background"></div>
         </div>
-      </section>
-
-      {/* Work Section */}
-      <section id="work" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <motion.h3 
-            className="text-3xl font-bold text-blue-900 mb-12 text-center"
-            initial="initial"
-            whileInView="animate"
+          <motion.h2 
+            className="text-3xl font-bold text-center text-[#1a4b84] mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
           >
-            Featured Work
-          </motion.h3>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            {artworks.map((artwork, index) => (
-              <motion.div 
-                key={index}
-                className="group relative h-80 rounded-xl overflow-hidden cursor-pointer"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
+            Tools You&apos;ll Master
+          </motion.h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {tools.map((tool, index) => (
+              <motion.div
+                key={tool.name}
+                className="bg-blue-50 rounded-xl p-6 flex flex-col items-center hover:bg-blue-100 transition-colors cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <Image
-                  src={artwork.image}
-                  alt={artwork.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6">
-                  <h4 className="text-xl font-bold mb-2">{artwork.title}</h4>
-                  <p className="text-center">{artwork.description}</p>
-                  <span className="mt-4 text-blue-200">{artwork.category}</span>
-                </div>
+                <tool.icon size={48} className="text-[#1a4b84] mb-4" />
+                <h3 className="text-[#1a4b84] font-semibold">{tool.name}</h3>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section id="contact" className="py-20 px-4 bg-blue-900 text-white">
+      {/* Student Showcase */}
+      <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center"
-            initial="initial"
-            whileInView="animate"
+          <motion.h2 
+            className="text-3xl font-bold text-center text-[#1a4b84] mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
           >
-            <h3 className="text-3xl font-bold mb-6">Let&apos;s Create Together</h3>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              I&apos;m always open to discussing new projects and creative ideas.
-              Whether you have a specific project in mind or just want to explore possibilities,
-              let&apos;s start a conversation.
-            </p>
-            <motion.button 
-              className="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get in Touch
-            </motion.button>
-          </motion.div>
+            Student Portfolios
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {students.map((student, index) => (
+              <motion.a
+                href={student.website}
+                key={student.name}
+                className="block group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform transform group-hover:scale-105">
+                  <div className="relative h-48">
+                    <Image
+                      src={student.image}
+                      alt={student.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-[#1a4b84] mb-2">
+                      {student.name}
+                    </h3>
+                    <p className="text-[#1a4b84]">View Portfolio →</p>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 bg-blue-950 text-blue-200">
+      <footer className="py-8 px-4 bg-[#1a4b84] text-white">
         <div className="max-w-6xl mx-auto text-center">
-          <p>© 2025 Artist Name. All rights reserved.</p>
+          <p>© 2025 AI Bootcamp. Building the future with AI.</p>
         </div>
       </footer>
     </main>
