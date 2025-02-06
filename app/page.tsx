@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { BiBot } from 'react-icons/bi';
 import { BsCodeSlash, BsRobot } from 'react-icons/bs';
+import { FaGoogleDrive } from 'react-icons/fa';
 import { IoLogoCss3 } from 'react-icons/io';
 import { SiGithub, SiOpenai } from 'react-icons/si';
 
@@ -42,15 +43,26 @@ export default function Home() {
       <nav className="bg-[#1a4b84] text-white py-4 px-4 fixed w-full z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="text-xl font-semibold">AI Bootcamp 2025</div>
-          <a 
-            href="https://github.com/mgkram4/student-Template" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#c4a052] transition-colors flex items-center gap-2"
-          >
-            <SiGithub size={20} />
-            <span>Student Template</span>
-          </a>
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://drive.google.com/drive/folders/1xdQbV-U7XztWvdJUZVIV--lZCqAj__IJ"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-[#c4a052] transition-colors flex items-center gap-2"
+            >
+              <FaGoogleDrive size={20} />
+              <span>Class Drive</span>
+            </a>
+            <a 
+              href="https://github.com/mgkram4/student-Template" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-[#c4a052] transition-colors flex items-center gap-2"
+            >
+              <SiGithub size={20} />
+              <span>Student Template</span>
+            </a>
+          </div>
         </div>
       </nav>
 
