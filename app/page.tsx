@@ -22,17 +22,17 @@ const tools = [
 ];
 
 const students = [
-  { name: "Evelyn Yan", website: "https://alex-portfolio.com", image: "/images/student4.png" },
-  { name: "Iris Ju", website: "https://jamie-portfolio.com", image: "/images/student5.png" },
-  { name: "Bob Zhang", website: "https://chris-portfolio.com", image: "/images/student6.png" },
-  { name: "Tim Zhou", website: "https://chris-portfolio.com", image: "/images/student3.png" },
-  { name: "Kenneth Shi", website: "https://chris-portfolio.com", image: "/images/student8.png" },
-  { name: "Sky Liu", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "James Yang", website: "https://chris-portfolio.com", image: "/images/student9.png" },
-  { name: "Oliver Zhang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Winnie Deng", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Amy Liu", website: "https://chris-portfolio.com", image: "/images/student2.png" },
-  { name: "Phoebe Huang", website: "https://chris-portfolio.com", image: "/images/student1.png" },
+  { name: "Evelyn Yan", website: "https://evelynyann.github.io/personal-profile/", image: "/images/student4.png" },
+  { name: "Iris Ju", website: "https://mgkram4.github.io/IRISnew/", image: "/images/student5.png" },
+  { name: "Bob Zhang", website: "https://bob007919.github.io/bob007919/", image: "/images/student6.png" },
+  { name: "Tim Zhou", website: "https://zt-1124.github.io/Zt/", image: "/images/student3.png" },
+  { name: "Kenneth Shi", website: "https://superawesome15.github.io/kenneth-proj/", image: "/images/student8.png" },
+  { name: "Sky Liu", website: "https://milkdragon7.github.io/sky/", image: "/api/placeholder/200/200" },
+  { name: "James Yang", website: "https://mgkram4.github.io/James-Port/", image: "/images/student9.png" },
+  { name: "Oliver Zhang", website: "https://easy54188.github.io/personal-info/", image: "/api/placeholder/200/200" },
+  { name: "Winnie Deng", website: "https://h2omst.github.io/winnie/", image: "/api/placeholder/200/200" },
+  { name: "Amy Liu", website: "https://amyljuzi.github.io/Amy-/", image: "/images/student2.png" },
+  { name: "Phoebe Huang", website: "https://phoebe525.github.io/phoEbe1/", image: "/images/student1.png" },
   { name: "Ann Wen", website: "https://chris-portfolio.com", image: "/images/student7.png" },
 ];
 
