@@ -22,18 +22,18 @@ const tools = [
 ];
 
 const students = [
-  { name: "Evelyn Yan", website: "https://alex-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Iris Ju", website: "https://jamie-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Bob Zhang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Tim Zhou", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Kenneth Shi", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Evelyn Yan", website: "https://alex-portfolio.com", image: "/images/student4.png" },
+  { name: "Iris Ju", website: "https://jamie-portfolio.com", image: "/images/student5.png" },
+  { name: "Bob Zhang", website: "https://chris-portfolio.com", image: "/images/student6.png" },
+  { name: "Tim Zhou", website: "https://chris-portfolio.com", image: "/images/student3.png" },
+  { name: "Kenneth Shi", website: "https://chris-portfolio.com", image: "/images/student8.png" },
   { name: "Sky Liu", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "James Yang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "James Yang", website: "https://chris-portfolio.com", image: "/images/student9.png" },
   { name: "Oliver Zhang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
   { name: "Winnie Deng", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Amy Liu", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Phoebe Huang", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
-  { name: "Ann Wen", website: "https://chris-portfolio.com", image: "/api/placeholder/200/200" },
+  { name: "Amy Liu", website: "https://chris-portfolio.com", image: "/images/student2.png" },
+  { name: "Phoebe Huang", website: "https://chris-portfolio.com", image: "/images/student1.png" },
+  { name: "Ann Wen", website: "https://chris-portfolio.com", image: "/images/student7.png" },
 ];
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
               className="hover:text-[#c4a052] transition-colors flex items-center gap-2"
             >
               <FaGoogleDrive size={20} />
-              <span>Class Drive</span>
+              <span>Class</span>
             </a>
             <a 
               href="https://github.com/mgkram4/student-Template" 
@@ -211,7 +211,7 @@ export default function Home() {
       <footer className="py-8 px-4 bg-[#1a4b84] text-white">
         <div className="max-w-6xl mx-auto text-center">
           <p>© 2025 AI Bootcamp. Building the future with AI.</p>
-        </div>
+div        </div>
       </footer>
     </main>
   );
