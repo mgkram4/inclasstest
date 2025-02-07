@@ -1,12 +1,12 @@
-// app/page.tsx
 'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { BiBot } from 'react-icons/bi';
 import { BsCodeSlash, BsRobot } from 'react-icons/bs';
-import { FaGoogleDrive } from 'react-icons/fa';
+import { FaGoogleDrive, FaMusic, FaPause } from 'react-icons/fa';
 import { IoLogoCss3 } from 'react-icons/io';
 import { SiGithub, SiOpenai } from 'react-icons/si';
 
@@ -37,6 +37,24 @@ const students = [
 ];
 
 export default function Home() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio('/Future Generations ext v1.mp4');
+  }, []);
+
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Navigation Bar */}
@@ -44,6 +62,22 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="text-xl font-semibold">AI Bootcamp 2025</div>
           <div className="flex items-center gap-6">
+            <button
+              onClick={toggleMusic}
+              className="hover:text-[#c4a052] transition-colors flex items-center gap-2 cursor-pointer"
+            >
+              {isPlaying ? (
+                <>
+                  <FaPause size={20} />
+                  <span>Pause Music</span>
+                </>
+              ) : (
+                <>
+                  <FaMusic size={20} />
+                  <span>Play Music</span>
+                </>
+              )}
+            </button>
             <a 
               href="https://drive.google.com/drive/folders/1xdQbV-U7XztWvdJUZVIV--lZCqAj__IJ"
               target="_blank" 
@@ -66,7 +100,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Add padding to account for fixed navbar */}
+      {/* Rest of the component remains the same */}
       <div className="pt-16">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
@@ -211,7 +245,7 @@ export default function Home() {
       <footer className="py-8 px-4 bg-[#1a4b84] text-white">
         <div className="max-w-6xl mx-auto text-center">
           <p>© 2025 AI Bootcamp. Building the future with AI.</p>
-div        </div>
+        </div>
       </footer>
     </main>
   );
